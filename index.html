@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portal Kegiatan | KPU Kabupaten Buton Tengah</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f8f8;
+            color: #222;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 3px solid #c90000;
+            position: relative;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background: #b40000;
+        }
+
+        .logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .header-text h3 {
+            font-size: 19px;
+            color: #a80000;
+            margin-bottom: 4px;
+        }
+
+        .header-text p {
+            font-size: 13px;
+            color: #777;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 50px;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.96),
+                    rgba(255,255,255,0.96)
+                );
+        }
+
+        .label {
+            display: inline-block;
+
+            background: #fff0f0;
+            color: #b00000;
+
+            padding: 9px 20px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            border: 1px solid #ffd0d0;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero h1 {
+            font-size: 38px;
+
+            max-width: 850px;
+
+            margin: auto;
+
+            line-height: 1.25;
+
+            color: #222;
+        }
+
+
+        .tema {
+            margin-top: 18px;
+
+            color: #777;
+
+            font-size: 17px;
+
+            max-width: 700px;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            line-height: 1.6;
+        }
+
+
+        .tanggal {
+            margin-top: 22px;
+
+            font-weight: bold;
+
+            color: #444;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           COUNTDOWN
+        ========================= */
+
+        .countdown {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 38px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .time-box {
+
+            background: white;
+
+            padding: 20px 15px;
+
+            border-radius: 14px;
+
+            width: 105px;
+
+            border: 1px solid #eee;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+            transition: 0.25s;
+        }
+
+
+        .time-box:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 30px rgba(180,0,0,0.15);
+        }
+
+
+        .time-box span {
+
+            display: block;
+
+            font-size: 32px;
+
+            font-weight: bold;
+
+            color: #b00000;
+
+            margin-bottom: 5px;
+        }
+
+
+        .time-box small {
+
+            color: #777;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu {
+
+            max-width: 900px;
+
+            margin: 10px auto 70px;
+
+            padding: 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .menu a {
+
+            text-decoration: none;
+
+            background: white;
+
+            color: #333;
+
+            padding: 22px;
+
+            border-radius: 14px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            border: 1px solid #eee;
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,0.06);
+
+            transition: 0.25s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .menu a::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 5px;
+
+            height: 100%;
+
+            background: #b00000;
+
+            transition: 0.25s;
+        }
+
+
+        .menu a:hover {
+
+            transform: translateY(-4px);
+
+            color: white;
+
+            background: #b00000;
+
+            box-shadow:
+                0 10px 25px rgba(176,0,0,0.25);
+        }
+
+
+        .menu a:hover::before {
+
+            background: #7d0000;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #a80000;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 28px 15px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        footer strong {
+
+            display: block;
+
+            font-size: 14px;
+
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+
+        @media(max-width: 600px) {
+
+            .header {
+
+                padding: 16px 5%;
+            }
+
+
+            .logo {
+
+                width: 48px;
+
+                height: 48px;
+            }
+
+
+            .header-text h3 {
+
+                font-size: 16px;
+            }
+
+
+            .header-text p {
+
+                font-size: 12px;
+            }
+
+
+            .hero {
+
+                padding:
+                    50px 18px 35px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 27px;
+            }
+
+
+            .tema {
+
+                font-size: 15px;
+            }
+
+
+            .tanggal {
+
+                font-size: 14px;
+            }
+
+
+            .time-box {
+
+                width: 75px;
+
+                padding: 15px 8px;
+            }
+
+
+            .time-box span {
+
+                font-size: 25px;
+            }
+
+
+            .menu {
+
+                grid-template-columns: 1fr;
+
+                padding: 18px;
+
+                margin-bottom: 50px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <!--
+        LOGO AKAN KITA TAMBAHKAN NANTI
+        -->
+
+        <div class="header-text">
+
+            <h3>
+                KPU Kabupaten Buton Tengah
+            </h3>
+
+            <p>
+                Portal Kegiatan
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="label">
+            Bedah Buku • Seri 1
+        </div>
+
+
+        <h1>
+            Judul Kegiatan Bedah Buku
+        </h1>
+
+
+        <p class="tema">
+            “Tema atau judul buku dapat ditulis
+            di bagian ini”
+        </p>
+
+
+        <p class="tanggal">
+            📅 Kamis, 22 Oktober 2026
+            • 09.00 WITA
+        </p>
+
+
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown">
+
+            <div class="time-box">
+
+                <span id="days">
+                    00
+                </span>
+
+                <small>
+                    Hari
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="hours">
+                    00
+                </span>
+
+                <small>
+                    Jam
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="minutes">
+                    00
+                </span>
+
+                <small>
+                    Menit
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="seconds">
+                    00
+                </span>
+
+                <small>
+                    Detik
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <section class="menu">
+
+
+        <a href="#">
+            📝 &nbsp; Daftar Hadir
+        </a>
+
+
+        <a href="#">
+            🎥 &nbsp; Link Zoom
+        </a>
+
+
+        <a href="#">
+            🖼️ &nbsp; Background Zoom
+        </a>
+
+
+        <a href="#">
+            📚 &nbsp; Materi
+        </a>
+
+
+        <a href="#">
+            🎓 &nbsp; Sertifikat
+        </a>
+
+
+        <a href="#">
+            ✏️ &nbsp; Perbaiki Data Sertifikat
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <strong>
+            KPU Kabupaten Buton Tengah
+        </strong>
+
+        Portal Kegiatan
+
+        <br>
+
+        © 2026 Komisi Pemilihan Umum
+        Kabupaten Buton Tengah
+
+    </footer>
+
+
+
+    <!-- =========================
+         COUNTDOWN SCRIPT
+    ========================= -->
+
+    <script>
+
+        const eventDate =
+            new Date(
+                "October 22, 2026 09:00:00"
+            ).getTime();
+
+
+        const countdown =
+            setInterval(function () {
+
+
+                const now =
+                    new Date().getTime();
+
+
+                const distance =
+                    eventDate - now;
+
+
+
+                const days =
+                    Math.floor(
+                        distance /
+                        (1000 * 60 * 60 * 24)
+                    );
+
+
+                const hours =
+                    Math.floor(
+                        (distance %
+                        (1000 * 60 * 60 * 24))
+                        /
+                        (1000 * 60 * 60)
+                    );
+
+
+                const minutes =
+                    Math.floor(
+                        (distance %
+                        (1000 * 60 * 60))
+                        /
+                        (1000 * 60)
+                    );
+
+
+                const seconds =
+                    Math.floor(
+                        (distance %
+                        (1000 * 60))
+                        /
+                        1000
+                    );
+
+
+
+                document.getElementById(
+                    "days"
+                ).innerHTML =
+                    days;
+
+
+                document.getElementById(
+                    "hours"
+                ).innerHTML =
+                    hours;
+
+
+                document.getElementById(
+                    "minutes"
+                ).innerHTML =
+                    minutes;
+
+
+                document.getElementById(
+                    "seconds"
+                ).innerHTML =
+                    seconds;
+
+
+
+                if (distance < 0) {
+
+                    clearInterval(countdown);
+
+                    document.getElementById(
+                        "days"
+                    ).innerHTML = "00";
+
+
+                    document.getElementById(
+                        "hours"
+                    ).innerHTML = "00";
+
+
+                    document.getElementById(
+                        "minutes"
+                    ).innerHTML = "00";
+
+
+                    document.getElementById(
+                        "seconds"
+                    ).innerHTML = "00";
+
+                }
+
+            }, 1000);
+
+    </script>
+
+
+</body>
+</html>
