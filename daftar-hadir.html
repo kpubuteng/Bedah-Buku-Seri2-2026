@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Daftar Hadir | KPU Kabupaten Buton Tengah</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #f7f7f7;
+
+            color: #222;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            background: white;
+
+            padding: 18px 8%;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            border-bottom: 3px solid #b00000;
+
+        }
+
+
+        .logo {
+
+            width: 55px;
+
+            height: 55px;
+
+            object-fit: contain;
+
+        }
+
+
+        .header-text h3 {
+
+            color: #a80000;
+
+            font-size: 18px;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .header-text p {
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .container {
+
+            max-width: 650px;
+
+            margin: 50px auto;
+
+            padding: 20px;
+
+        }
+
+
+        .form-card {
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.08);
+
+            border-top: 5px solid #b00000;
+
+        }
+
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .title h1 {
+
+            color: #a80000;
+
+            font-size: 28px;
+
+        }
+
+
+        .title p {
+
+            color: #777;
+
+            margin-top: 8px;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        /* =========================
+           FORM INPUT
+        ========================= */
+
+        .form-group {
+
+            margin-top: 22px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        label span {
+
+            color: #b00000;
+
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.2s;
+
+            font-family: inherit;
+
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #b00000;
+
+            box-shadow:
+                0 0 0 3px rgba(176,0,0,0.08);
+
+        }
+
+
+        textarea {
+
+            min-height: 90px;
+
+            resize: vertical;
+
+        }
+
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .submit-btn {
+
+            width: 100%;
+
+            margin-top: 30px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #b00000;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+
+        }
+
+
+        .submit-btn:hover {
+
+            background: #8f0000;
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        /* =========================
+           BACK
+        ========================= */
+
+        .back {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #a80000;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+        .back:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+            padding: 25px;
+
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 600px) {
+
+            .header {
+
+                padding: 15px 5%;
+
+            }
+
+
+            .container {
+
+                margin: 25px auto;
+
+                padding: 15px;
+
+            }
+
+
+            .form-card {
+
+                padding: 25px 20px;
+
+            }
+
+
+            .title h1 {
+
+                font-size: 24px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <!--
+        LOGO KPU AKAN KITA MASUKKAN NANTI
+        -->
+
+        <div class="header-text">
+
+            <h3>
+                KPU Kabupaten Buton Tengah
+            </h3>
+
+            <p>
+                Portal Kegiatan
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- FORM -->
+
+    <main class="container">
+
+        <div class="form-card">
+
+
+            <div class="title">
+
+                <h1>
+                    Daftar Hadir
+                </h1>
+
+                <p>
+                    Bedah Buku Seri 1
+                    <br>
+                    KPU Kabupaten Buton Tengah
+                </p>
+
+            </div>
+
+
+            <form id="attendanceForm">
+
+
+                <!-- NAMA -->
+
+                <div class="form-group">
+
+                    <label>
+                        Nama Lengkap
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        placeholder="Masukkan nama lengkap"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- INSTANSI -->
+
+                <div class="form-group">
+
+                    <label>
+                        Instansi/Lembaga
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="instansi"
+                        placeholder="Masukkan instansi/lembaga"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- JABATAN -->
+
+                <div class="form-group">
+
+                    <label>
+                        Jabatan
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jabatan"
+                        placeholder="Masukkan jabatan"
+                    >
+
+                </div>
+
+
+
+                <!-- WHATSAPP -->
+
+                <div class="form-group">
+
+                    <label>
+                        Nomor WhatsApp
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="whatsapp"
+                        placeholder="08xxxxxxxxxx"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="contoh@email.com"
+                        required
+                    >
+
+                </div>
+
+                <!-- KEHADIRAN -->
+
+                <div class="form-group">
+
+                    <label>
+                        Kehadiran
+                        <span>*</span>
+                    </label>
+
+                    <select id="kehadiran" required>
+
+                        <option value="">
+                            Pilih kehadiran
+                        </option>
+
+                        <option value="Hadir">
+                            Hadir
+                        </option>
+
+                        <option value="Tidak Hadir">
+                            Tidak Hadir
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- KETERANGAN -->
+
+                <div class="form-group">
+
+                    <label>
+                        Keterangan
+                    </label>
+
+                    <textarea
+                        id="keterangan"
+                        placeholder="Keterangan (opsional)"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+
+                    KIRIM DAFTAR HADIR
+
+                </button>
+            </form>
+
+            <a
+                href="index.html"
+                class="back"
+            >
+
+                ← Kembali ke Portal Kegiatan
+
+            </a>
+
+
+        </div>
+
+    </main>
+
+
+
+    <footer>
+
+        © 2026 KPU Kabupaten Buton Tengah
+
+    </footer>
+
+
+
+    <script>
+
+        document
+        .getElementById("attendanceForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Terima kasih. Daftar hadir berhasil dikirim."
+            );
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
